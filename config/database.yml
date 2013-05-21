@@ -38,7 +38,7 @@ production:
   database: dxypherblog_production
   pool: 5
   username: root
-  password:
+  password: dxypher1947
   socket: /tmp/mysql.sock
 
 cucumber:
