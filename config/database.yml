@@ -37,7 +37,7 @@ production:
   reconnect: false
   database: dxypherblog_production
   pool: 5
-  username: root
+  username: ebroot
   password: dxypher1947
   socket: /tmp/mysql.sock
 
