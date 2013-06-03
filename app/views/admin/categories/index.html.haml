@@ -1,1 +1,5 @@
-%h1 Admin - Categories
+%h1 Admin - All Categories
+= link_to "Create New Category", new_admin_category_path
+%ul
+  - @categories.each do |category|
+    %li= category.title

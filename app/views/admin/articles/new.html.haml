@@ -3,4 +3,5 @@
 = simple_form_for [:admin, @article] do |f|
   = f.input :title, label: "Article Title"
   = f.input :content, label: "Content"
+  = f.association :categories, :collection => @category_options, :as => :check_boxes, :item_wrapper_class => 'inline'
   = f.button :submit

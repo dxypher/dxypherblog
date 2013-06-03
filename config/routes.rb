@@ -8,6 +8,10 @@ Dxypherblog::Application.routes.draw do
   namespace :admin do
     resources :articles, :categories
   end
-  # resources :articles
+
   resources :categories
+  match "/blog" => "articles#index"
+  resources :articles do
+    resources :comments
+  end
 end

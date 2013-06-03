@@ -7,6 +7,7 @@ class Admin::ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @category_options = Category.all
   end
 
   def create

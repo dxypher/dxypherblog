@@ -1,0 +1,5 @@
+%h2 Create New Category
+
+= simple_form_for [:admin, @category] do |f|
+  = f.input :title, label: "Category Title"
+  = f.button :submit
