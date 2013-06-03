@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   has_many :articles
-  has_many :comments, :as => :commentable
+  # has_many :comments, :as => :commentable
+  has_many :comments
 
   validates_presence_of :name
   validates_uniqueness_of :email, case_sensitive: false

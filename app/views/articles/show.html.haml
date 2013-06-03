@@ -1,6 +1,14 @@
 %h1= @article.title
 %p= @article.content
 
-= simple_form_for([@article, @article.comments.build]) do |f|
-  = f.input :body, label: "Comment Here"
-  = f.submit
+%ul
+  - @article.comments.each do |comment|
+    %li= comment.body
+
+- if current_user
+  = simple_form_for([@article, @article.comments.build]) do |f|
+    = f.input :body, label: "Comment Here"
+    = f.submit
+- else
+  %h3 To add comments please login or sign up, thanks!
+  = link_to "Sign Up", new_user_registration_path
