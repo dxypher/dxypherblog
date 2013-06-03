@@ -4,4 +4,10 @@ Dxypherblog::Application.routes.draw do
   end
   root to: 'home#index'
   devise_for :users
+
+  namespace :admin do
+    resources :articles, :categories
+  end
+  # resources :articles
+  resources :categories
 end

@@ -1,0 +1,7 @@
+= link_to "dXypher", root_path, :class => 'brand'
+%ul.nav
+  - if current_user.has_role? :admin
+    %li
+      = link_to 'Articles', admin_articles_path
+    %li
+      = link_to 'Categories', admin_categories_path

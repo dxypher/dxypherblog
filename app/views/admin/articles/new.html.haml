@@ -1,0 +1,6 @@
+%h2 Create New Article
+
+= simple_form_for [:admin, @article] do |f|
+  = f.input :title, label: "Article Title"
+  = f.input :content, label: "Content"
+  = f.button :submit
