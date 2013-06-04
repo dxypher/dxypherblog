@@ -15,4 +15,6 @@ Dxypherblog::Application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  match "/comment/signup" => "registrations#new"
 end
