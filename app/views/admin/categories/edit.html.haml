@@ -1,0 +1,7 @@
+%h2 Edit Category
+
+= simple_form_for [:admin, @category] do |f|
+  = f.input :title, label: "Category Title"
+  = f.button :submit
+
+= link_to "Delete Category", admin_category_path(@category), confirm: "Delete Category", method: :delete

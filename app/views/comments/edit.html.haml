@@ -1,0 +1,7 @@
+%h2 Edit Comment
+
+= simple_form_for([@comment.article, @comment]) do |f|
+  = f.input :body, label: "Comment Body"
+  = f.button :submit
+
+= link_to "Delete Comment", article_comment_path(@comment.article.id, @comment.id), confirm: "Delete Comment?", :method => :delete

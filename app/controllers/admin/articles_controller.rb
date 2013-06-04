@@ -19,4 +19,20 @@ class Admin::ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
   end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    @article.update_attributes(params[:article])
+    @article.save
+    respond_with [:admin, @article]
+  end
+
+  def destroy
+    @article = Article.find(params[:id]).destroy
+    redirect_to action: "index"
+  end
 end
