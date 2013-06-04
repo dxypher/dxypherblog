@@ -1,0 +1,5 @@
+%ul
+  %h2 Categories
+  %li= link_to "All Articles", blog_filter_path(category: "all"), remote: true
+  - @categories.each do |category|
+    %li= link_to category.title, blog_filter_path(category: category), remote: true

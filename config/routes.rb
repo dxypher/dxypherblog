@@ -10,6 +10,7 @@ Dxypherblog::Application.routes.draw do
   end
 
   resources :categories
+  match "/blog/filter" => "articles#filter_by_category"
   match "/blog" => "articles#index"
   resources :articles do
     resources :comments
