@@ -22,6 +22,7 @@ class Admin::ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @category_options = Category.all
   end
 
   def update

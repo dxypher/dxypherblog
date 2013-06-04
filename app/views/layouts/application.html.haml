@@ -15,10 +15,13 @@
 				.container
 					= render 'layouts/navigation'
 		#main{:role => "main"}
-			.container
-				.content
-					.row
-						.span12
-							= render 'layouts/messages'
-							= yield
-					%footer
+			- if controller_name == "home"
+				.container-fluid
+					.content
+						.row-fluid
+							= render "layouts/application"
+			- else
+				.container
+					.content
+						.row
+							= render "layouts/application"

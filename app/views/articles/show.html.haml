@@ -6,7 +6,7 @@
     %li= comment.body
     - if can? :delete, comment
       = link_to "Delete Comment", article_comment_path(comment.article.id, comment.id), confirm: "Delete Comment?", :method => :delete
-    - if current_user.id == comment.user.id
+    - if current_user == comment.user
       = link_to "Edit Comment", edit_article_comment_path(comment.article.id, comment.id)
 
 - if current_user

@@ -1,8 +1,8 @@
-%h2 Edit Article
+%legend Edit Article
 
-= simple_form_for [:admin, @article] do |f|
-  = f.input :title, label: "Article Title"
-  = f.input :content, label: "Content"
+= simple_form_for [:admin, @article], :html => { :class => 'form-horizontal' } do |f|
+  = f.input :title, label: "Article Title", :input_html => { :class => "span9" }
+  = f.input :content, label: "Content", :input_html => { :class => "span10" }
   = f.association :categories, :collection => @category_options, :as => :check_boxes, :item_wrapper_class => 'inline'
   = f.button :submit
 

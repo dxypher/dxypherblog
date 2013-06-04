@@ -1,5 +1,17 @@
-%h1 Admin - All Articles
-= link_to "Create New Article", new_admin_article_path
-%ul
-  - @articles.each do |article|
-    %li= link_to article.title, admin_article_path(article)
+%h3.admin-title Admin - Articles
+.span3
+  .well
+    .nav= link_to "Create New Article", new_admin_article_path
+.span8
+  %table.table.table-striped
+    %thead
+      %tr
+        %th id
+        %th Title
+        %th Published?
+    %tbody
+      - @articles.each do |article|
+        %tr
+          %td= article.id
+          %td= link_to article.title, admin_article_path(article)
+          %td= article.published?

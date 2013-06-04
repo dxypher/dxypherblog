@@ -1,5 +1,15 @@
-%h1 Admin - All Categories
-= link_to "Create New Category", new_admin_category_path
-%ul
-  - @categories.each do |category|
-    %li= link_to category.title, edit_admin_category_path(category)
+%h3.admin-title Admin - Categories
+.span3
+  .well
+    .nav= link_to "Create New Category", new_admin_category_path
+.span8
+  %table.table.table-striped
+    %thead
+      %tr
+        %th id
+        %th Title
+    %tbody
+      - @categories.each do |category|
+        %tr
+          %td= category.id
+          %td= link_to category.title, edit_admin_category_path(category)
