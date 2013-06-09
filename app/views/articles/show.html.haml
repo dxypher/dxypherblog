@@ -1,5 +1,6 @@
 %h1= @article.title
-%p= @article.content
+%div
+  = @article.content.html_safe
 
 %ul
   - @article.comments.each do |comment|
