@@ -1,6 +1,6 @@
 class Admin::ArticlesController < ApplicationController
   layout 'admin'
-  respond_to :html, :json
+  respond_to :html, :json, :js
   def index
     @articles = Article.all
   end

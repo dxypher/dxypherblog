@@ -4,4 +4,5 @@
   = f.input :title, label: "Article Title", :input_html => { :class => "span9" }
   = f.input :content, label: "Content", :input_html => { :class => "span10" }
   = f.association :categories, :collection => @category_options, :as => :check_boxes, :item_wrapper_class => 'inline'
+  = f.input :published, as: :boolean
   = f.button :submit

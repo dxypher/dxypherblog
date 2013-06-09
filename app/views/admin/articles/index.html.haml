@@ -15,7 +15,12 @@
         %tr
           %td= article.id
           %td= link_to article.title, admin_article_path(article)
-          %td= article.published?
+          %td{id: "article_#{article.id}"}
+            - if article.published?
+              Yes
+            - else
+              No
           %td
-            = simple_form_for article, remote: true do |f|
-              = f.input :published, as: :boolean, label: false
+            = form_for [:admin, article], remote: true do |f|
+              = f.check_box :published, as: :boolean
+              - f.submit
