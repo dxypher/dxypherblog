@@ -3,6 +3,7 @@ Dxypherblog::Application.routes.draw do
     root to: 'home#index'
   end
   root to: 'home#index'
+  post 'home/contact', controller: :home, action: :contact
   devise_for :users
 
   namespace :admin do
