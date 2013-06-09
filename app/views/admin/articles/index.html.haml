@@ -9,9 +9,13 @@
         %th id
         %th Title
         %th Published?
+        %th Publish
     %tbody
       - @articles.each do |article|
         %tr
           %td= article.id
           %td= link_to article.title, admin_article_path(article)
           %td= article.published?
+          %td
+            = simple_form_for article, remote: true do |f|
+              = f.input :published, as: :boolean, label: false

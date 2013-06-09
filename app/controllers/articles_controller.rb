@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @categories = Category.all
-    @articles = Article.all(include: :comments)
+    @articles = Article.where(published: true).includes(:comments)
   end
 
   def show
