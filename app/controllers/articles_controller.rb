@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
   def index
     @categories = Category.all
-    @articles = Article.where(published: true).includes(:comments)
+    @articles = Article.where(published: true)
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.includes(:comments).find(params[:id])
   end
 
   def filter_by_category
@@ -13,9 +13,9 @@ class ArticlesController < ApplicationController
     if params[:category] != "all"
       category = Category.find(params[:category])
       @title = category.title
-      @articles = category.articles.all
+      @articles = category.articles.where(published: true)
     else
-      @articles = Article.all(include: :comments)
+      @articles = Article.where(published: true)
     end
   end
 end
