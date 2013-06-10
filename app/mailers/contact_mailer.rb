@@ -4,6 +4,6 @@ class ContactMailer < ActionMailer::Base
   def contact_message(contact)
     @contact = contact
 
-    mail to: "dxypher1@gmail.com", subject: "Contact From Blog"
+    mail to: "appymltest@gmail.com", subject: "Contact From Blog"
   end
 end
