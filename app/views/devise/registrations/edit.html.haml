@@ -1,16 +1,16 @@
-%h2
-  = "Edit #{resource_name.to_s.humanize}"
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f|
-  = f.error_notification
-  = display_base_errors resource
-  = f.input :name, :autofocus => true
-  = f.input :email, :required => true
-  = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
-  = f.input :password_confirmation, :required => false
-  = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
-  = f.button :submit, 'Update', :class => 'btn-primary'
-%h3 Cancel my account
-%p
-  Unhappy?
-  =  link_to 'Cancel my account', registration_path(resource_name), :data => { :confirm => 'Are you sure?' }, :method => :delete
-= link_to "Back", :back
+.span5.devise_form#edit
+  %h2
+    = "Edit #{resource_name.to_s.humanize}"
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f|
+    = f.error_notification
+    = display_base_errors resource
+    = f.input :name, :autofocus => true, label: false, placeholder: "Name"
+    = f.input :email, :required => true, label: false, placeholder: "email"
+    = f.input :password, :autocomplete => "off", label: false, placeholder: "Password - leave it blank if you don't want to change it", :required => false
+    = f.input :password_confirmation, :required => false, placeholder: "Password Confirmation", label: false
+    = f.input :current_password, label: false, placeholder: "Current Password - need your current password to confirm your changes", :required => true
+    = f.button :submit, 'Update', :class => 'btn-primary'
+  %p
+    =  link_to 'Cancel my account', registration_path(resource_name), :data => { :confirm => 'Are you sure?' }, :method => :delete
+    %br
+    = link_to "Back", :back
