@@ -1,3 +1,7 @@
 Hello,
 
-This is my personal blog.
+This is my personal website and blog. It's built with Ruby on Rails using HAML, SASS, and JS on the front end.
+
+This site is located at www.dxypher.com and is currently deployed to AWS EC2. I use Elastic Beanstalk for deployment and AWS's RDS service for my database. I also use AWS's Route 53 for my DNS.
+
+The site is still a work in progress.
