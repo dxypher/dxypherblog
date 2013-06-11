@@ -1,12 +1,11 @@
 .container-fluid
 %section.intro
-  .intro
 %section.about
-  .about{style:"background-color: #FFF; height: 550px;"}
 %section.contact
-  .contact{style:"background-color: #C8D6E8; height: 550px;"}
-    = form_tag "/home/contact" do
-      = text_field_tag "name", "Name"
-      = text_field_tag "email", "Email"
-      = text_area_tag "message", "Message"
-      = submit_tag "Send Message"
+  = form_tag "/home/contact" do
+    = text_field_tag "name", nil, placeholder: "Name"
+    %span#spam_email
+      = text_field_tag "email", nil
+    = text_field_tag "email_2", nil,  placeholder: "Email"
+    = text_area_tag "message", nil, placeholder: "Message"
+    = submit_tag "Send Message"
