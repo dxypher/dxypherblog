@@ -1,8 +1,8 @@
 Dxypherblog::Application.routes.draw do
   authenticated :user do
-    root to: 'home#index'
+    root to: 'home#index', via: :get
   end
-  root to: 'home#index'
+  root to: 'home#index', via: :get
   post 'home/contact', controller: :home, action: :contact
   devise_for :users
 
@@ -10,11 +10,11 @@ Dxypherblog::Application.routes.draw do
     resources :articles, :categories
   end
 
-  resources :categories
+  resources :categories, only: [:index]
   match "/blog/filter" => "articles#filter_by_category"
   match "/blog" => "articles#index"
-  resources :articles do
-    resources :comments
+  resources :articles, only: [:index, :show] do
+    resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
   match "/comment/signup" => "registrations#new"
