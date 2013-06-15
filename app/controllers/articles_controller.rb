@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @categories = Category.all
-    @articles = Article.where(published: true)
+    @articles = Article.where(published: true).all
   end
 
   def show
@@ -9,13 +9,12 @@ class ArticlesController < ApplicationController
   end
 
   def filter_by_category
-    @categories = Category.all
     if params[:category] != "all"
-      category = Category.find(params[:category])
+      category = Category.includes(:articles).find(params[:category])
       @title = category.title
-      @articles = category.articles.where(published: true)
+      @articles = category.articles.where(published: true).all
     else
-      @articles = Article.where(published: true)
+      @articles = Article.where(published: true).all
     end
   end
 end
