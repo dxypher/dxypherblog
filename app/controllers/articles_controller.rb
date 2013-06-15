@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @categories = Category.all
-    @articles = Article.where(published: true).all
+    @articles = Article.where(published: true).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def show
