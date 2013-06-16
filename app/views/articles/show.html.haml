@@ -1,17 +1,31 @@
-%h1= @article.title
-%div
+%h1.article-title= @article.title
+.article-content
   = @article.content.html_safe
+%hr
+%h4
+  %i.icon-comment
+  = pluralize(@article.comments_count, "Comment")
+.article-comments
+  %ul.comment-list
+    - @article.comments.each do |comment|
+      %li
+        .image
+          = image_tag avatar_url(comment.user), class: 'circular'
+        %span.author
+          = comment.author
+        .time
+          %i.icon-time
+          = time_ago_in_words(comment.created_at)
+          ago
+        %p
+          = comment.body
+        - if can? :delete, comment
+          = link_to "Delete Comment", article_comment_path(comment.article.id, comment.id), confirm: "Delete Comment?", :method => :delete
+        - if current_user == comment.user
+          = link_to "Edit Comment", edit_article_comment_path(comment.article.id, comment.id)
 
-%ul
-  - @article.comments.each do |comment|
-    %li= comment.body
-    - if can? :delete, comment
-      = link_to "Delete Comment", article_comment_path(comment.article.id, comment.id), confirm: "Delete Comment?", :method => :delete
-    - if current_user == comment.user
-      = link_to "Edit Comment", edit_article_comment_path(comment.article.id, comment.id)
-
-- if current_user
-  = render "comments/new_comment"
-- else
-  %h3 To add comments please login or sign up, thanks!
-  = link_to "Sign Up", new_user_registration_path
+  - if current_user
+    = render "comments/new_comment"
+  - else
+    %h3 To add comments please login or sign up, thanks!
+    = link_to "Sign Up", new_user_registration_path

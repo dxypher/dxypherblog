@@ -7,7 +7,7 @@
     - @articles.each do |article|
       %article
         %header
-          %h2= link_to article.title, article_path(article)
+          %h2.article-title= link_to article.title, article_path(article)
           %p.date-posted
             %i.icon-calendar
             = (article.created_at).strftime("%B %d, %Y")
@@ -16,7 +16,7 @@
           = link_to 'Read Full Article', article_path(article)
           |
           %i.icon-comment
-          = "#{article.comments_count} Comments"
+          = pluralize(article.comments_count, "Comment")
       %hr
 
 
