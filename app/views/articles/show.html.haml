@@ -2,6 +2,7 @@
 .article-content
   = @article.content.html_safe
 %hr
+= link_to "Add Comment", '#add_comment'
 %h4
   %i.icon-comment
   = pluralize(@article.comments_count, "Comment")
@@ -23,9 +24,13 @@
           = link_to "Delete Comment", article_comment_path(comment.article.id, comment.id), confirm: "Delete Comment?", :method => :delete
         - if current_user == comment.user
           = link_to "Edit Comment", edit_article_comment_path(comment.article.id, comment.id)
-
+  %span#add_comment
   - if current_user
     = render "comments/new_comment"
   - else
-    %h3 To add comments please login or sign up, thanks!
-    = link_to "Sign Up", new_user_registration_path
+    %p.add-comment
+      To add a comment please 
+      = link_to "Sign Up", new_user_registration_path
+      or
+      = link_to "Login", new_user_session_path
+      thanks!
