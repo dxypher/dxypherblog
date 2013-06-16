@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @categories = Category.all
-    @articles = Article.where(published: true).order("created_at DESC").page(params[:page]).per(10)
+    @articles = Article.where(published: true).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def show
@@ -12,9 +12,9 @@ class ArticlesController < ApplicationController
     if params[:category] != "all"
       category = Category.includes(:articles).find(params[:category])
       @title = category.title
-      @articles = category.articles.where(published: true).all
+      @articles = category.articles.where(published: true).order("created_at DESC").page(params[:page]).per(5)
     else
-      @articles = Article.where(published: true).all
+      @articles = Article.where(published: true).order("created_at DESC").page(params[:page]).per(5)
     end
   end
 end

@@ -3,9 +3,15 @@
 
 body
   padding-top: 60px
-  background-image: url("bg_dark.png")
-  h2
-    color:  #007FFF
+  &.sessions, &.registrations, &.passwords
+    background-image: url("bg_dark.png")
+    h2
+      color:  #007FFF
+  a:hover
+    color: #007fff
+@media (max-width: 979px)
+  body
+    padding-top: 0px
 
 .container-fluid
   padding-left: 0px
