@@ -14,15 +14,12 @@
 		%header.navbar.navbar-fixed-top
 			%nav.navbar-inner
 				.container
-					= render 'layouts/navigation'
+					= content_for?(:container) ? yield(:container) : render('layouts/navigation')
 		#main{:role => "main"}
-			- if controller_name == "home"
-				.container-fluid
-					.content
-						.row-fluid
-							= render "layouts/application"
-			- else
-				.container
-					.content
-						.row
-							= render "layouts/application"
+			%div{class: "#{controller_name == 'home' ? 'container-fluid' : 'container'}"}
+				.content
+					%div{class: "#{controller_name == 'home' ? 'row-fluid' : 'row'}"}
+						.span12
+							= render 'layouts/messages'
+							= yield
+						%footer

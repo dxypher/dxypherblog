@@ -1,13 +1,49 @@
+body.home
+  padding-top: 20px
+  .navbar-inner
+    border: 0 !important
+    background: none !important
+    box-shadow: none !important
+    -webkit-box-shadow: none !important
 section
-  &.intro
-    background-color: #b9e7f9
-    height: 550px
-    margin-top: -19px
-  &.about
+  &#intro
+    background-image: url('2013_03_Biking-in-San-Francisco.jpg')
+    background-attachment: fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    min-width: 1024px
+    min-height: 768px
+    margin-top: -20px
+    .span7
+      float: none
+      margin-left: auto
+      // margin-right: auto
+      padding-top: 90px
+      padding-left: 20px
+      p.greeting
+        display: inline
+        background-color: rgba(255, 255, 255, 0.3)
+        color: #000
+        font: 'Abel', sans-serif
+        text-transform: uppercase
+        font-weight: lighter
+        font-size: 65px
+        text-align: center
+        line-height: 80px
+        text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)
+        em
+          color: #007fff
+          text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)
+  &#about
     background-color: #FFF
-    height: 550px
-  &.contact
+    height: 650px
+  &#skills
+    background-color: grey
+    height: 650px
+  &#contact
     background-color: #C8D6E8
-    height: 550px
+    height: 650px
     span#spam_email
       display: none

@@ -1,7 +1,25 @@
 .container-fluid
-%section.intro
-%section.about
-%section.contact
+%section#intro
+  .span7
+    %p.greeting Hello
+    %br
+    %p.greeting 
+      My Name is  
+      %em Nikhil Hira
+    %br
+    %p.greeting 
+      I'm a 
+      %em Ruby on Rails
+    %br
+    %p.greeting Developer
+    %br
+    %p.greeting in
+    %br
+    %p.greeting 
+      %em San Francisco
+%section#about
+%section#skills
+%section#contact
   = form_tag "/home/contact" do
     = text_field_tag "name", nil, placeholder: "Name"
     %span#spam_email
