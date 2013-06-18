@@ -18,8 +18,73 @@
     %p.greeting 
       %em San Francisco
 %section#about
+  .span5
+    %p.section-title ABOUT ME
+    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed ornare elit. Proin justo lorem, tristique eu malesuada a, commodo non lectus. Praesent facilisis malesuada neque, nec suscipit elit. Vivamus placerat cursus felis. Maecenas dapibus lorem id gravida blandit. Curabitur a sapien eu lectus vestibulum congue sed sit amet ipsum. Nulla erat libero, sodales at tellus in, gravida bibendum elit. Donec a auctor risus. Aenean a leo eget elit scelerisque rutrum. Maecenas tempor hendrerit tortor, id porttitor elit congue ac.
+
+    %p Phasellus rutrum felis in nulla porttitor consequat. Aliquam erat volutpat. Proin in porta orci. Quisque non turpis eu elit fringilla tempus et nec massa. Ut non tempor lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec commodo, enim et volutpat commodo, nunc est placerat turpis, vitae posuere ligula nulla id neque. In eu lectus rhoncus, rutrum dui eu, aliquam nisi. Cras convallis, mauris vel gravida iaculis, eros est vehicula odio, sit amet sagittis metus velit sit amet ante. Proin at sem convallis, posuere sem non, tristique orci. Suspendisse malesuada dignissim pharetra. Phasellus pulvinar eleifend tortor quis lacinia. Nunc ut convallis tellus.
+  .span3
+    = image_tag('me.jpg')
 %section#skills
+  %p.section-title SKILLS
+  .span11
+    %ul.icons
+      %li
+        %i.icon-road
+      %li
+        %i.icon-html5
+      %li
+        %i.icon-keyboard
+      %li
+        %i.icon-coffee
+      %li
+        %i.icon-chevron-right
+    %ul
+      %li
+        
+        %strong Ruby on Rails:
+        Doing full-stack development withing a large code base.
+      %li
+        %strong HAML / HTML:
+        Coding dynamic and static UI’s.
+      %li
+        %strong Pair Programming:
+        Pairing with fellow developers to share knowledge and write efficient, bug-free code.
+      %li
+        %strong Javascript / Coffeescript:
+        Integrating JS/CS to create dynamic and interactive UI’s.
+      %li
+        %strong Backbone:
+        Limited but growing experience building front end functionality with BackBone.
+    %ul.icons.second-set
+      %li
+        %i.icon-ok
+      %li
+        %i.icon-css3
+      %li
+        %i.icon-sitemap
+      %li
+        %i.icon-code-fork
+      %li
+        %i.icon-refresh
+    %ul.right
+      %li
+        %strong RSpec:
+        Understanding of TDD process using RSpec.
+      %li
+        %strong SASS / CSS3:
+        Styling UI’s with an eye for detail and staying true to designs.
+      %li
+        %strong MySQL:
+        Building new model schemas.
+      %li
+        %strong Git:
+        Github, reviewing and making pull requests, Git branching strategies.
+      %li
+        %strong Agile Development:
+        Working with Asana story backlogs, development sprints, scrum, and biweekly retro.
 %section#contact
+  %p.section-title Get in Touch
   = form_tag "/home/contact" do
     = text_field_tag "name", nil, placeholder: "Name"
     %span#spam_email

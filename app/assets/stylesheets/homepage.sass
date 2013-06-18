@@ -6,6 +6,9 @@ body.home
     box-shadow: none !important
     -webkit-box-shadow: none !important
 section
+  p.section-title
+    font: 'Abel', sans-serif
+    font-size: 36px
   &#intro
     background-image: url('2013_03_Biking-in-San-Francisco.jpg')
     background-attachment: fixed
@@ -35,15 +38,55 @@ section
         text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)
         em
           color: #007fff
-          text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)
   &#about
-    background-color: #FFF
-    height: 650px
+    background-image: url("light_wool.png")
+    height: 590px
+    padding-left: 186px
+    padding-top: 131px
+    p
+      font-size: 14px
+      line-height: 25px
+      color: #333
+    p.section-title
+      font: 'Abel', sans-serif
+      font-size: 36px
+    img
+      margin-left: 175px
   &#skills
-    background-color: grey
-    height: 650px
+    background-image: url("bg_dark.png")
+    height: 530px
+    padding-left: 126px
+    padding-top: 131px
+    color: #FFF
+    p.section-title
+      padding-left: 60px
+      margin-bottom: 45px
+    ul
+      list-style: none
+      font-size: 15px
+      float: left
+      &.icons
+        width: 45px
+        &.second-set
+          margin-left: 50px
+      li
+        margin-bottom: 20px
+        display: block
+        width: 450px
+        height: 50px
+        strong
+          font-size: 20px
+          color: #007fff
+      i
+        font-size: 40px
+        margin-right: 10px
+        float: left
+      &.right
+        margin-left: 25px
   &#contact
-    background-color: #C8D6E8
+    background-color: #000
     height: 650px
+    padding-left: 126px
+    padding-top: 131px
     span#spam_email
       display: none
