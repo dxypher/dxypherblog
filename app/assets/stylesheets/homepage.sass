@@ -41,9 +41,13 @@ section
           color: #007fff
   &#about
     background-image: url("light_wool.png")
-    height: 590px
+    min-height: 590px
+    min-width: 1024px
     padding-left: 186px
     padding-top: 131px
+    overflow: hidden
+    .span5
+      margin-right: 175px
     p
       font-size: 16px
       line-height: 25px
@@ -53,10 +57,15 @@ section
       font: 'Abel', sans-serif
       font-size: 36px
     img
-      margin-left: 175px
+      margin-bottom: 15px
+      margin-top: 41px
+      max-height: 285px
+      max-width: 285px
   &#skills
+    overflow: hidden
     background-image: url("bg_dark.png")
-    height: 530px
+    min-height: 530px
+    min-width: 1024px
     padding-left: 126px
     padding-top: 131px
     color: #FFF
@@ -67,14 +76,18 @@ section
       list-style: none
       font-size: 15px
       float: left
+      &.left
+        margin-left: 0px
+        margin-right: 50px
       &.icons
         width: 45px
+        margin-right: 15px
         &.second-set
-          margin-left: 50px
+          margin-left: 0px
       li
         margin-bottom: 20px
         display: block
-        width: 450px
+        width: 520px
         height: 50px
         strong
           font-size: 20px
@@ -86,8 +99,10 @@ section
       &.right
         margin-left: 25px
   &#contact
+    overflow: hidden
     background-color: #000
-    height: 530px
+    min-height: 530px
+    min-width: 1024px
     padding-left: 186px
     padding-top: 131px
     color: #FFF
@@ -111,6 +126,8 @@ section
     .span5
       float: left
       margin-left: 0px
+      overflow: hidden
+      margin-right: 10px
       p
         font-size: 20px
         line-height: 30px
