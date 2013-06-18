@@ -1,7 +1,7 @@
-%h2 Edit Comment
+%legend Edit Comment
 
-= simple_form_for([@comment.article, @comment]) do |f|
-  = f.input :body, label: "Comment Body"
-  = f.button :submit
+= simple_form_for([@comment.article, @comment], :html => { :class => 'form-horizontal' }) do |f|
+  = f.input :body, label: "Comment Body", :input_html => { :class => "span9" }
+  = f.button :submit, class: 'btn-primary'
 
-= link_to "Delete Comment", article_comment_path(@comment.article.id, @comment.id), confirm: "Delete Comment?", :method => :delete
+= link_to "Delete Comment", article_comment_path(@comment.article.id, @comment.id), confirm: "Delete Comment?", :method => :delete, class: "delete-link"
