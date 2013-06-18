@@ -84,11 +84,17 @@
         %strong Agile Development:
         Working with Asana story backlogs, development sprints, scrum, and biweekly retro.
 %section#contact
-  %p.section-title Get in Touch
-  = form_tag "/home/contact" do
-    = text_field_tag "name", nil, placeholder: "Name"
-    %span#spam_email
-      = text_field_tag "email", nil
-    = text_field_tag "email_2", nil,  placeholder: "Email"
-    = text_area_tag "message", nil, placeholder: "Message"
-    = submit_tag "Send Message"
+  %p.section-title
+    %i.icon-envelope
+    GET IN TOUCH
+  .span5
+    = form_tag "/home/contact" do
+      = text_field_tag "name", nil, placeholder: "Name"
+      %span#spam_email
+        = text_field_tag "email", nil
+      = text_field_tag "email_2", nil,  placeholder: "Email"
+      = text_area_tag "message", nil, placeholder: "Message"
+      = submit_tag "Send Message", class: 'btn-primary'
+  .span5
+    %p
+      I'm currently looking to join a team of developers as an apprentice or junior developer. I love working with developers who are always learning and who enjoy sharing their knowledge with others. If your team has room for a developer like me please get in touch.
