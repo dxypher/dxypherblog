@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  include ArticlesHelper
+
   def index
     @categories = Category.all
     @articles = Article.where(published: true).order("created_at DESC").page(params[:page]).per(5)
@@ -6,15 +8,5 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.includes(:comments).find(params[:id])
-  end
-
-  def filter_by_category
-    if params[:category] != "all"
-      category = Category.includes(:articles).find(params[:category])
-      @title = category.title
-      @articles = category.articles.where(published: true).order("created_at DESC").page(params[:page]).per(5)
-    else
-      @articles = Article.where(published: true).order("created_at DESC").page(params[:page]).per(5)
-    end
   end
 end
